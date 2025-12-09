@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class karyawan {
     public String Nama;
     public String alamat;
@@ -8,13 +9,14 @@ public class karyawan {
     public Boolean status;
     Scanner input = new Scanner(System.in);
 
-    public karyawan(){
+    public karyawan() {
     }
-    public karyawan(Boolean x){
+
+    public karyawan(Boolean x) {
         status = x;
     }
-    
-    public void inputdatakaryawan(){
+
+    public void inputdatakaryawan() {
         System.out.print("Nama: ");
         Nama = input.nextLine();
         System.out.print("Alamat: ");
@@ -28,45 +30,51 @@ public class karyawan {
         input.nextLine();
         System.out.print("Status (hadir/tidak): ");
         String s = input.nextLine();
-        if(s.equals("hadir")){
+        if (s.equals("hadir")) {
             status = true;
-        }
-        else if (s.equals("tidak")){
+        } else if (s.equals("tidak")) {
             status = false;
         }
     }
 
-    public void tampildatakaryawan(){
+    public void tampildatakaryawan() {
         String s;
-        if(status == true){
+        if (status == true) {
             s = "hadir";
-        }
-        else{
+        } else {
             s = "Tidak hadir";
         }
-        System.out.println("Nama: "+Nama);
-        System.out.println("Alamat: "+alamat);
-        System.out.println("No.telepon: "+telp);
-        System.out.println("Kategori: "+kategori);
-        System.out.println("Jenis kelamin: "+jenisK);
-        System.out.println("Status: "+s);
+        System.out.println("Nama: " + Nama);
+        System.out.println("Alamat: " + alamat);
+        System.out.println("No.telepon: " + telp);
+        System.out.println("Kategori: " + kategori);
+        System.out.println("Jenis kelamin: " + jenisK);
+        System.out.println("Status: " + s);
     }
-    public void setstatus(Boolean x){
+
+    public void setstatus(Boolean x) {
         status = x;
     }
-    public void setnama(String x){
+
+    public void setnama(String x) {
         Nama = x;
     }
-    public void setalamat(String x){
+
+    public void setalamat(String x) {
         alamat = x;
     }
-    public void settelp(String x){
+
+    public void settelp(String x) {
         telp = x;
     }
-    public void setkategori(String x){
+
+    public void setkategori(String x) {
         kategori = x;
     }
-    public void setjenisk(char x){
+
+    public void setjenisk(char x) {
         jenisK = x;
     }
 }
+
+// tesgt
