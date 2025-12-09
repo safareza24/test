@@ -64,6 +64,7 @@ public class menu {
             }
 
             else if (pilh == 3) {
+                System.out.println("");
                 System.out.println("Terima kasih telah menggunakan program");
             } else {
                 System.out.println("Invalid");
