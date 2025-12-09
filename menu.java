@@ -13,49 +13,62 @@ public class menu {
         Scanner sc = new Scanner(System.in);
         menu app = new menu();
         Boolean n = false;
+        int pilh;
 
-        System.out.println("Sistem travel ");
-        System.out.println("Silahkan pilih menu");
-        System.out.println("1. Sistem Inventory");
-        System.out.println("2. Pemesanan tour dan travel");
-        int pilh = sc.nextInt();
-        if (pilh == 1) {
-            do {
+        do {
+            System.out.println("");
+            System.out.println("Sistem travel ");
+            System.out.println("Silahkan pilih menu");
+            System.out.println("1. Sistem Inventory");
+            System.out.println("2. Pemesanan tour dan travel");
+            System.out.println("3. Exit");
+            System.out.print("Opsi : ");
+            pilh = sc.nextInt();
+            if (pilh == 1) {
+                do {
+                    System.out.println("");
+                    System.out.println("1. Input data karyawan");
+                    System.out.println("2. Input data mobil");
+                    System.out.println("3. Tampilkan data karyawan");
+                    System.out.println("4. Tampilkan data mobil");
+                    System.out.println("5. Update data karyawan");
+                    System.out.println("6. Update data mobil");
+                    System.out.println("7. Delete data karyawan");
+                    System.out.println("8. Delete data mobil");
+                    System.out.println("9. Delete data mobil");
+                    System.out.println("10. Back");
+                    System.out.print("Masukkan pilihan anda: ");
+                    int pil = sc.nextInt();
+
+                    if (pil == 1) {
+                        app.createkaryawan();
+                    } else if (pil == 2) {
+                        app.createmobil();
+                    } else if (pil == 3) {
+                        app.readkaryawan();
+                    } else if (pil == 4) {
+                        app.readmobil();
+                    } else if (pil == 5) {
+                        app.updatekaryawan();
+                    } else if (pil == 9) {
+                        n = true;
+                    } else if (pil == 10) {
+                        break;
+                    }
+                } while (n == false);
+            }
+
+            else if (pilh == 2) {
                 System.out.println("");
-                System.out.println("1.input data karyawan");
-                System.out.println("2.input data mobil");
-                System.out.println("3.tampilkan data karyawan");
-                System.out.println("4.tampilkan data mobil");
-                System.out.println("5.Update data karyawan");
-                System.out.println("6.Update data mobil");
-                System.out.println("7.delete data karyawan");
-                System.out.println("8.delete data mobil");
-                System.out.println("9.delete data mobil");
-                System.out.println("10.back");
-                System.out.print("Masukkan pilihan anda: ");
-                int pil = sc.nextInt();
+                System.out.println("Menu tour dan travel");
+            }
 
-                if (pil == 1) {
-                    app.createkaryawan();
-                } else if (pil == 2) {
-                    app.createmobil();
-                } else if (pil == 3) {
-                    app.readkaryawan();
-                } else if (pil == 4) {
-                    app.readmobil();
-                } else if (pil == 5) {
-                    app.updatekaryawan();
-                } else if (pil == 9) {
-                    n = true;
-                } else if (pil == 10) {
-                    continue;
-                }
-            } while (n == false);
-        }
-
-        else if (pilh == 2) {
-            System.out.println("Menu tour dan travel");
-        }
+            else if (pilh == 3) {
+                System.out.println("Terima kasih telah menggunakan program");
+            } else {
+                System.out.println("Invalid");
+            }
+        } while (pilh != 3);
     }
 
     public void createmobil() {
