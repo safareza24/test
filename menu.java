@@ -36,7 +36,7 @@ public class menu {
                     System.out.println("7. Delete data karyawan");
                     System.out.println("8. Delete data mobil");
                     System.out.println("9. Delete data mobil");
-                    System.out.println("10. Back");
+                    System.out.println("10. Kembali");
                     System.out.print("Masukkan pilihan anda: ");
                     int pil = sc.nextInt();
 
@@ -59,14 +59,48 @@ public class menu {
             }
 
             else if (pilh == 2) {
-                System.out.println("");
-                System.out.println("Menu tour dan travel");
+                int pil;
+                do {
+
+                    System.out.println("");
+                    System.out.println("Menu tour dan travel");
+                    System.out.println("1. Pesan Travel");
+                    System.out.println("2. Sewa Mobil");
+                    System.out.println("5. Kembali");
+                    System.out.print("Masukkan pilihan anda: ");
+                    pil = sc.nextInt();
+
+                    if (pil == 1) {
+                        System.out.println("");
+                        System.out.println("Pesan Travel");
+                        System.out.println("Rute yang tersedia : ");
+                        System.out.println("1. Surabaya - Malang");
+                        System.out.println("2. Madura - Malang");
+                        System.out.println("3. Banyuwangi - Malang");
+                        System.out.println("4. Situbondo - Malang");
+                        System.out.println("5. Tulungagung - Malang");
+                        System.out.print("Pilihan rute anda (nomor saja): ");
+                        int rute = sc.nextInt();
+
+                    } else if (pil == 2) {
+                        System.out.println("");
+                        System.out.println("Sewa Mobil");
+                    } else if (pil == 5) {
+                        break;
+                    } else {
+                        System.out.println("");
+                        System.out.println("Invalid");
+                    }
+
+                } while (pil != 5);
+
             }
 
             else if (pilh == 3) {
                 System.out.println("");
                 System.out.println("Terima kasih telah menggunakan program");
             } else {
+                System.out.println("");
                 System.out.println("Invalid");
             }
         } while (pilh != 3);
