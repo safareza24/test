@@ -21,7 +21,8 @@ public class menu {
             System.out.println("6.Update data mobil");
             System.out.println("7.delete data karyawan");
             System.out.println("8.delete data mobil");
-            System.out.println("9.delete data mobil");
+            System.out.println("9.Pesan");
+            System.out.println("10.Keluar");
             System.out.println("");
             System.out.print("Masukkan pilihan anda: ");
             int pil = sc.nextInt();
@@ -41,7 +42,10 @@ public class menu {
             else if(pil == 5){
                 app.updatekaryawan();
             }
-            else if(pil == 9){
+            else if(pil == 6){
+                app.updatemobil();
+            }
+            else if(pil == 10){
                 n = true;
             }
         }while(n == false);
@@ -59,7 +63,8 @@ public class menu {
         for(int i=0;i<this.banyakmobil;i++){
 
             this.mbl[i] = new mobil();
-            System.out.print("Mobil "+(i+1)+": ");
+            System.out.println("");
+            System.out.println("Mobil "+(i+1)+": ");
             this.mbl[i].inputdatamobil();
         }
     }
@@ -76,6 +81,7 @@ public class menu {
         for(int i=0;i<this.banyakkaryawan;i++){
 
             this.kry[i] = new karyawan();
+            System.out.println("");
             System.out.println("Karyawan "+(i+1)+": ");
             this.kry[i].inputdatakaryawan();
         }
@@ -93,14 +99,15 @@ public class menu {
     public void readmobil(){
 
         System.out.println("Data mobil: ");
-        for(int i=0;i<kry.length;i++){
-            System.out.println("Karyawan "+(i+1)+": ");
+        for(int i=0;i<mbl.length;i++){
+            System.out.println("");
+            System.out.println("Mobil "+(i+1)+": ");
             mbl[i].tampildatamobil();
         }
     }
     public void updatekaryawan(){
         for(int i=0;i<banyakkaryawan;i++){
-            System.out.println((i+1)+kry[i].Nama);
+            System.out.println((i+1)+"."+kry[i].Nama);
         }
         System.out.println("Pilih karyawan berapa: ");
         int pil = input.nextInt();
@@ -151,6 +158,64 @@ public class menu {
             }
             else{
                 kry[pil-1].setstatus(false);
+            }
+            
+        }
+    }
+
+    public void updatemobil(){
+        for(int i=0;i<banyakmobil;i++){
+            System.out.println((i+1)+"."+mbl[i].merek+mbl[i].model);
+        }
+        System.out.println("Pilih mobil berapa: ");
+        int pil = input.nextInt();
+        System.out.println("");
+
+        input.nextLine();
+        mbl[pil-1].tampildatamobil();
+        System.out.println("apa yang ingin anda ubah?");
+        String p = input.nextLine();
+
+        if(p.equalsIgnoreCase("merek")){
+            System.out.println("");
+            System.out.println("Masukkan merek yang baru: ");
+            String merekbaru = input.nextLine();
+            mbl[pil-1].setmerek(merekbaru);
+        }
+        else if(p.equalsIgnoreCase("model")){
+            System.out.println("");
+            System.out.println("Masukkan model yang baru: ");
+            String modelbaru = input.nextLine();
+            mbl[pil-1].setmodel(modelbaru);
+        }
+        else if(p.equalsIgnoreCase("nomor plat")){
+            System.out.println("");
+            System.out.println("Masukkan nomor plat yang baru: ");
+            String platbaru = input.nextLine();
+            mbl[pil-1].setplat(platbaru);
+        }
+        else if(p.equalsIgnoreCase("kategori")){
+            System.out.println("");
+            System.out.println("Masukkan kategori yang baru: ");
+            String kategoribaru = input.nextLine();
+            mbl[pil-1].setkategori(kategoribaru);
+        }
+        else if(p.equalsIgnoreCase("biaya sewa")){
+            System.out.println("");
+            System.out.println("Masukkan biaya sewa yang baru: ");
+            Double bsbaru = input.nextDouble();
+            mbl[pil-1].setbiayasewa(bsbaru);
+        }
+        else if(p.equalsIgnoreCase("status")){
+            System.out.println("");
+            System.out.println("Masukkan status yang baru: ");
+            String sbaru = input.nextLine();
+
+            if(sbaru.equalsIgnoreCase("tersedia")){
+                mbl[pil-1].setsts(true);
+            }
+            else{
+                mbl[pil-1].setsts(false);
             }
             
         }

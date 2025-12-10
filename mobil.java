@@ -26,9 +26,10 @@ public class mobil {
         kategori = input.nextLine();
         System.out.print("Biaya sewa: ");
         biayasewa = input.nextDouble();
+        input.nextLine();
         System.out.print("Status (Tersedia/Tidak tersedia): ");
         String s = input.nextLine();
-        if(s.equals("Tersedia")){
+        if(s.equalsIgnoreCase("Tersedia")){
             status = true;
         }
         else{
@@ -37,11 +38,11 @@ public class mobil {
 
     }
     public void tampildatamobil(){
-        String s;
-        if(status = true){
+        String s = "s";
+        if(status == true){
             s = "Tersedia";
         }
-        else{
+        else if(status == false){
             s = "Tidak tersedia";
         }
         System.out.println("Merek: "+merek);
@@ -50,6 +51,24 @@ public class mobil {
         System.out.println("Kategori: "+kategori);
         System.out.println("Status: "+s);
         System.out.println("Biaya sewa: "+biayasewa);
+    }
+    public void setmerek(String x){
+        merek = x;
+    }
+    public void setmodel(String x){
+        model = x;
+    }
+    public void setplat(String x){
+        plat = x;
+    }
+    public void setkategori(String x){
+        kategori = x;
+    }
+    public void setbiayasewa(Double x){
+        biayasewa = x;
+    }
+    public void setsts(Boolean x){
+        status = x;
     }
 
 }
