@@ -62,6 +62,10 @@ public class menu {
                 int pil;
                 do {
 
+
+//   git config --global user.email "you@example.com"
+//   git config --global user.name "Your Name"
+
                     System.out.println("");
                     System.out.println("Menu tour dan travel");
                     System.out.println("1. Pesan Travel");
@@ -79,8 +83,12 @@ public class menu {
                         System.out.println("3. Banyuwangi - Malang");
                         System.out.println("4. Situbondo - Malang");
                         System.out.println("5. Tulungagung - Malang");
+                        System.out.println("6. Kembali")
                         System.out.print("Pilihan rute anda (nomor saja): ");
                         int rute = sc.nextInt();
+                        do {
+                            if (rute==1)
+                        }
 
                     } else if (pil == 2) {
                         System.out.println("");
