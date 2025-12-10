@@ -22,7 +22,7 @@ public class menu {
             System.out.println("Silahkan pilih menu");
             System.out.println("1. Sistem Inventory");
             System.out.println("2. Pemesanan tour dan travel");
-            System.out.println("3. Exit");
+            System.out.println("3. Keluar Program");
             System.out.print("Opsi : ");
             pilh = sc.nextInt();
             if (pilh == 1) {
@@ -229,7 +229,7 @@ public class menu {
             } else {
                 kry[pil - 1].setstatus(false);
             }
-
+            // almond eyes my beloved 💖🐴🌰👀
         }
     }
 }
