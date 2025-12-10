@@ -62,10 +62,6 @@ public class menu {
                 int pil;
                 do {
 
-
-//   git config --global user.email "you@example.com"
-//   git config --global user.name "Your Name"
-
                     System.out.println("");
                     System.out.println("Menu tour dan travel");
                     System.out.println("1. Pesan Travel");
@@ -83,11 +79,25 @@ public class menu {
                         System.out.println("3. Banyuwangi - Malang");
                         System.out.println("4. Situbondo - Malang");
                         System.out.println("5. Tulungagung - Malang");
-                        System.out.println("6. Kembali")
+                        System.out.println("6. Kembali");
                         System.out.print("Pilihan rute anda (nomor saja): ");
                         int rute = sc.nextInt();
-                        do {
-                            if (rute==1)
+                        if (rute == 1) {
+                            System.out.println("1. Surabaya - Malang");
+                        } else if (rute == 2) {
+                            System.out.println("2. Madura - Malang");
+                        } else if (rute == 3) {
+                            System.out.println("3. Banyuwangi - Malang");
+                        } else if (rute == 4) {
+                            System.out.println("4. Situbondo - Malang");
+                        } else if (rute == 5) {
+                            System.out.println("5. Tulungagung - Malang");
+                        } else if (rute == 6) {
+                            break;
+                        }
+
+                        else {
+                            System.out.println("Invalid");
                         }
 
                     } else if (pil == 2) {
