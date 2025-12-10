@@ -12,6 +12,7 @@ public class menu {
         String mobil;
         Scanner sc = new Scanner(System.in);
         menu app = new menu();
+        pesan psn = new pesan();
         Boolean n = false;
         int pilh;
 
@@ -82,27 +83,32 @@ public class menu {
                         System.out.println("6. Kembali");
                         System.out.print("Pilihan rute anda (nomor saja): ");
                         int rute = sc.nextInt();
-                        if (rute == 1) {
-                            System.out.println("1. Surabaya - Malang");
-                        } else if (rute == 2) {
-                            System.out.println("2. Madura - Malang");
-                        } else if (rute == 3) {
-                            System.out.println("3. Banyuwangi - Malang");
-                        } else if (rute == 4) {
-                            System.out.println("4. Situbondo - Malang");
-                        } else if (rute == 5) {
-                            System.out.println("5. Tulungagung - Malang");
-                        } else if (rute == 6) {
-                            break;
+                        if (rute == 6) {
+                            continue;
                         }
 
-                        else {
+                        if (rute < 1 || rute > 5) {
                             System.out.println("Invalid");
+                            continue;
+                        }
+
+                        System.out.println("Anda memilih rute nomor: " + rute);
+
+                        if (app.mbl == null || app.kry == null) {
+                            System.out.println("Data mobil atau karyawan belum diinput!");
+                        } else {
+                            psn.pesanTravel(app.mbl, app.kry);
                         }
 
                     } else if (pil == 2) {
                         System.out.println("");
                         System.out.println("Sewa Mobil");
+
+                        if (app.mbl == null) {
+                            System.out.println("Data mobil belum diinput!");
+                        } else {
+                            psn.sewaMobil(app.mbl);
+                        }
                     } else if (pil == 5) {
                         break;
                     } else {
