@@ -7,9 +7,11 @@ public class karyawan {
     public String kategori;
     public char jenisK;
     public Boolean status;
+    // public int idKaryawan;
     Scanner input = new Scanner(System.in);
 
     public karyawan() {
+        // idKaryawan++;
     }
 
     public karyawan(Boolean x) {
@@ -44,6 +46,7 @@ public class karyawan {
         } else {
             s = "Tidak hadir";
         }
+        // System.out.println("Id : " + idKaryawan);
         System.out.println("Nama: " + Nama);
         System.out.println("Alamat: " + alamat);
         System.out.println("No.telepon: " + telp);

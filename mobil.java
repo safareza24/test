@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class mobil {
     Scanner input = new Scanner(System.in);
 
@@ -8,13 +9,17 @@ public class mobil {
     public String kategori;
     public Boolean status;
     public double biayasewa;
+    // public int idMobil;
 
-    public mobil(){
+    public mobil() {
+        // idMobil++;
     }
-    public mobil(Boolean x){
+
+    public mobil(Boolean x) {
         status = x;
     }
-    public void inputdatamobil(){
+
+    public void inputdatamobil() {
 
         System.out.print("Masukkan merek: ");
         merek = input.nextLine();
@@ -28,28 +33,49 @@ public class mobil {
         biayasewa = input.nextDouble();
         System.out.print("Status (Tersedia/Tidak tersedia): ");
         String s = input.nextLine();
-        if(s.equals("Tersedia")){
+        input.nextLine();
+        if (s.equalsIgnoreCase("tersedia")) {
             status = true;
-        }
-        else{
+        } else {
             status = false;
         }
 
     }
-    public void tampildatamobil(){
+
+    public void tampildatamobil() {
         String s;
-        if(status = true){
+        if (status == true) {
             s = "Tersedia";
-        }
-        else{
+        } else {
             s = "Tidak tersedia";
+            // System.out.println("Id : " + idMobil);
+            System.out.println("Merek: " + merek);
+            System.out.println("model: " + model);
+            System.out.println("Nomor plat: " + plat);
+            System.out.println("Kategori: " + kategori);
+            System.out.println("Status: " + s);
+            System.out.println("Biaya sewa: " + biayasewa);
         }
-        System.out.println("Merek: "+merek);
-        System.out.println("model: "+model);
-        System.out.println("Nomor plat: "+plat);
-        System.out.println("Kategori: "+kategori);
-        System.out.println("Status: "+s);
-        System.out.println("Biaya sewa: "+biayasewa);
+
     }
 
+    public void setstatus(Boolean x) {
+        status = x;
+    }
+
+    public void setmerk(String x) {
+        merek = x;
+    }
+
+    public void setmodel(String x) {
+        model = x;
+    }
+
+    public void setplat(String x) {
+        plat = x;
+    }
+
+    public void setkategori(String x) {
+        kategori = x;
+    }
 }
