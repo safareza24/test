@@ -260,9 +260,9 @@ public class menu {
         System.out.println("apa yang ingin anda ubah?");
         String p = input.nextLine();
 
-        if (p.equalsIgnoreCase("merk")) {
+        if (p.equalsIgnoreCase("merek")) {
             System.out.println("");
-            System.out.println("Masukkan merk yang baru: ");
+            System.out.println("Masukkan merek yang baru: ");
             String merkbaru = input.nextLine();
             // input.nextLine();
             mbl.get(pil - 1).setmerk(merkbaru);
