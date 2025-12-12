@@ -70,8 +70,4 @@ public class karyawan {
     public void setjenisk(char x){
         jenisK = x;
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes

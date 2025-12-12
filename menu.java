@@ -53,12 +53,13 @@ public class menu {
     }
 
     public void createmobil(){
+
         System.out.print("Masukkan banyak mobil: ");
         this.banyakmobil = input.nextInt();
 
         input.nextLine();
-
         this.mbl = new mobil[this.banyakmobil];
+        System.out.println("");
         System.out.println("Input data mobil: ");
         for(int i=0;i<this.banyakmobil;i++){
 
@@ -67,6 +68,7 @@ public class menu {
             System.out.println("Mobil "+(i+1)+": ");
             this.mbl[i].inputdatamobil();
         }
+        
     }
 
     public void createkaryawan(){
@@ -76,7 +78,7 @@ public class menu {
         input.nextLine();
 
         this.kry = new karyawan[this.banyakkaryawan];
-
+        System.out.println("");
         System.out.println("Input data karyawan: ");
         for(int i=0;i<this.banyakkaryawan;i++){
 
