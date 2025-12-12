@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class karyawan {
+    private static int counter = 1;
+    public int id;
+
     public String Nama;
     public String alamat;
     public String telp;
@@ -11,7 +14,7 @@ public class karyawan {
     Scanner input = new Scanner(System.in);
 
     public karyawan() {
-        // idKaryawan++;
+        this.id = counter++;
     }
 
     public karyawan(Boolean x) {
@@ -46,7 +49,7 @@ public class karyawan {
         } else {
             s = "Tidak hadir";
         }
-        // System.out.println("Id : " + idKaryawan);
+        System.out.println("Id : " + id);
         System.out.println("Nama: " + Nama);
         System.out.println("Alamat: " + alamat);
         System.out.println("No.telepon: " + telp);

@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class mobil {
     Scanner input = new Scanner(System.in);
-
+    private static int counter = 1; // auto increment
+    public int id;
     public String merek;
     public String model;
     public String plat;
@@ -12,7 +13,8 @@ public class mobil {
     // public int idMobil;
 
     public mobil() {
-        // idMobil++;
+        this.id = counter++;
+
     }
 
     public mobil(Boolean x) {
@@ -48,7 +50,7 @@ public class mobil {
             s = "Tersedia";
         } else {
             s = "Tidak tersedia";
-            // System.out.println("Id : " + idMobil);
+            System.out.println("Id : " + id);
             System.out.println("Merek: " + merek);
             System.out.println("model: " + model);
             System.out.println("Nomor plat: " + plat);

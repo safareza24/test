@@ -2,14 +2,12 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class menu {
-    public int banyakmobil;
-    public int banyakkaryawan;
     public ArrayList<mobil> mbl = new ArrayList<>();
     public ArrayList<karyawan> kry = new ArrayList<>();
     public pesan psn;
     public Scanner input = new Scanner(System.in);
-    public int idMbl = 1;
-    public int idKyw = 1;
+    // public int idMbl = 1;
+    // public int idKyw = 1;
 
     public static void main(String[] args) {
         String mobil;
@@ -138,19 +136,19 @@ public class menu {
     // add data 1 satu
     public void createmobil() {
         mobil m = new mobil();
-        System.out.println("Input data untuk Mobil ID : " + idMbl);
+        System.out.println("Input data untuk Mobil ID : " + m.id);
         m.inputdatamobil();
         mbl.add(m);
-        idMbl++;
+        // idMbl++;
     }
 
     public void createkaryawan() {
         karyawan k = new karyawan();
-        System.out.println("Input data untuk Karyawan ID : " + idKyw);
+        System.out.println("Input data untuk Karyawan ID : " + k.id);
         k.inputdatakaryawan();
         kry.add(k);
         // k.idKaryawan++;
-        idKyw++;
+        // idKyw++;
     }
 
     public void readkaryawan() {
@@ -176,24 +174,24 @@ public class menu {
         }
 
         System.out.println("Data mobil:");
-        int idm = 1;
+        // int idm = 1;
         for (mobil m : mbl) {
-            System.out.println("Id : " + idm);
+            // System.out.println("Id : " + idm);
             m.tampildatamobil();
             System.out.println("");
-            idm++;
+            // idm++;
         }
     }
 
     public void updatekaryawan() {
 
         System.out.println("Data karyawan:");
-        int idk = 1;
+        // int idk = 1;
         for (karyawan k : kry) {
-            System.out.println("Id : " + idk);
+            // System.out.println("Id : " + idk);
             k.tampildatakaryawan();
             System.out.println("");
-            idk++;
+            // idk++;
         }
 
         System.out.println("Pilih karyawan berapa: ");
@@ -246,12 +244,12 @@ public class menu {
     public void updatemobil() {
 
         System.out.println("Data mobil:");
-        int idm = 1;
+        // int idm = 1;
         for (mobil m : mbl) {
-            System.out.println("Id : " + idm);
+            // System.out.println("Id : " + idm);
             m.tampildatamobil();
             System.out.println("");
-            idm++;
+            // idm++;
         }
         System.out.println("Pilih mobil mana: ");
         int pil = input.nextInt();
