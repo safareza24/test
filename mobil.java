@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
 public class mobil {
-    Scanner input = new Scanner(System.in);
     private static int counter = 1; // auto increment
     public int id;
-    public String merek;
-    public String model;
-    public String plat;
-    public String kategori;
-    public Boolean status;
+    public String merek = "";
+    public String model = "";
+    public String plat = "";
+    public String kategori = "";
+    public Boolean status = true;
     public double biayasewa;
-    // public int idMobil;
+    Scanner input = new Scanner(System.in);
 
     public mobil() {
         this.id = counter++;
@@ -33,12 +32,12 @@ public class mobil {
         kategori = input.nextLine();
         System.out.print("Biaya sewa: ");
         biayasewa = input.nextDouble();
-        System.out.print("Status (Tersedia/Tidak tersedia): ");
+        System.out.print("Status (tersedia/tidak): ");
         String s = input.nextLine();
         input.nextLine();
         if (s.equalsIgnoreCase("tersedia")) {
             status = true;
-        } else {
+        } else if (s.equalsIgnoreCase("tidak")) {
             status = false;
         }
 
@@ -50,14 +49,14 @@ public class mobil {
             s = "Tersedia";
         } else {
             s = "Tidak tersedia";
-            System.out.println("Id : " + id);
-            System.out.println("Merek: " + merek);
-            System.out.println("model: " + model);
-            System.out.println("Nomor plat: " + plat);
-            System.out.println("Kategori: " + kategori);
-            System.out.println("Status: " + s);
-            System.out.println("Biaya sewa: " + biayasewa);
         }
+        System.out.println("Id : " + id);
+        System.out.println("Merek: " + merek);
+        System.out.println("model: " + model);
+        System.out.println("Nomor plat: " + plat);
+        System.out.println("Kategori: " + kategori);
+        System.out.println("Status: " + s);
+        System.out.println("Biaya sewa: " + biayasewa);
 
     }
 

@@ -4,13 +4,13 @@ public class karyawan {
     private static int counter = 1;
     public int id;
 
-    public String Nama;
-    public String alamat;
-    public String telp;
-    public String kategori;
+    public String Nama = "";
+    public String alamat = "";
+    public String telp = "";
+    public String kategori = "";
     public char jenisK;
-    public Boolean status;
-    // public int idKaryawan;
+    public Boolean status = true;
+
     Scanner input = new Scanner(System.in);
 
     public karyawan() {
@@ -35,9 +35,9 @@ public class karyawan {
         input.nextLine();
         System.out.print("Status (hadir/tidak): ");
         String s = input.nextLine();
-        if (s.equals("hadir")) {
+        if (s.equalsIgnoreCase("hadir")) {
             status = true;
-        } else if (s.equals("tidak")) {
+        } else if (s.equalsIgnoreCase("tidak")) {
             status = false;
         }
     }

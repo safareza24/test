@@ -97,7 +97,7 @@ public class menu {
 
                         System.out.println("Anda memilih rute nomor: " + rute);
 
-                        if (app.mbl == null || app.kry == null) {
+                        if (app.mbl.isEmpty() || app.kry.isEmpty()) {
                             System.out.println("Data mobil atau karyawan belum diinput!");
                         } else {
                             psn.pesanTravel(app.mbl, app.kry);
@@ -107,7 +107,7 @@ public class menu {
                         System.out.println("");
                         System.out.println("Sewa Mobil");
 
-                        if (app.mbl == null) {
+                        if (app.mbl.isEmpty()) {
                             System.out.println("Data mobil belum diinput!");
                         } else {
                             psn.sewaMobil(app.mbl);
@@ -264,36 +264,36 @@ public class menu {
             System.out.println("");
             System.out.println("Masukkan merk yang baru: ");
             String merkbaru = input.nextLine();
-            input.nextLine();
+            // input.nextLine();
             mbl.get(pil - 1).setmerk(merkbaru);
         } else if (p.equalsIgnoreCase("model")) {
             System.out.println("");
             System.out.println("Masukkan model yang baru: ");
             String modelbaru = input.nextLine();
-            input.nextLine();
+            // input.nextLine();
             mbl.get(pil - 1).setmodel(modelbaru);
         } else if (p.equalsIgnoreCase("plat")) {
-            System.out.println("");
+            // System.out.println("");
             System.out.println("Masukkan no.plat yang baru: ");
             String platbaru = input.nextLine();
-            input.nextLine();
+            // input.nextLine();
             mbl.get(pil - 1).setplat(platbaru);
         } else if (p.equalsIgnoreCase("kategori")) {
             System.out.println("");
             System.out.println("Masukkan kategori yang baru: ");
             String kategoribaru = input.nextLine();
-            input.nextLine();
+            // input.nextLine();
             mbl.get(pil - 1).setkategori(kategoribaru);
         } else if (p.equalsIgnoreCase("status")) {
             System.out.println("");
             System.out.println("Masukkan status yang baru: ");
             String sbaru = input.nextLine();
-            input.nextLine();
+            // input.nextLine();
 
             if (sbaru.equalsIgnoreCase("tersedia")) {
-                kry.get(pil - 1).setstatus(true);
+                mbl.get(pil - 1).setstatus(true);
             } else {
-                kry.get(pil - 1).setstatus(false);
+                mbl.get(pil - 1).setstatus(false);
             }
         }
     }
