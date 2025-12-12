@@ -37,8 +37,8 @@ public class menu {
                     System.out.println("6. Update data mobil");
                     System.out.println("7. Delete data karyawan");
                     System.out.println("8. Delete data mobil");
-                    System.out.println("9. Delete data mobil");
-                    System.out.println("10. Kembali");
+                    
+                    System.out.println("9. Kembali");
                     System.out.print("Masukkan pilihan anda: ");
                     int pil = sc.nextInt();
 
@@ -54,10 +54,13 @@ public class menu {
                         app.updatekaryawan();
                     } else if (pil == 6) {
                         app.updatemobil();
-                    } else if (pil == 9) {
+
+                    } else if(pil == 7){ //hapus karyawan ===========================
+                        app.hapuskaryawan();
+                    } else if (pil == 8){//hapus mobil =================
+                        app.hapusmobil();
+                    } else if (pil == 9) { // close farez
                         n = true;
-                    } else if (pil == 10) {
-                        break;
                     }
                 } while (n == false);
             }
@@ -297,5 +300,63 @@ public class menu {
             }
         }
     }
-}
+    //=====================================================================hapus karyawan kodenya
+    public void hapuskaryawan() {
+        if (kry.isEmpty()) {
+            System.out.println("Belum ada data karyawan untuk dihapus!");
+            return;
+        }
+
+        System.out.println("Data karyawan:");
+        int index = 1;
+        for (karyawan k : kry) {
+            System.out.println("ID: " + index);
+            k.tampildatakaryawan();
+            System.out.println("");
+            index++;
+        }
+
+        System.out.print("Masukkan ID karyawan yang ingin dihapus: ");
+        int idhapus = input.nextInt();
+
+        if (idhapus < 1 || idhapus > kry.size()) {
+           System.out.println("ID tidak valid!");
+            return;
+        }
+
+        kry.remove(idhapus - 1);
+        System.out.println("Data karyawan berhasil dihapus!");
+    }
+    
+    //=================================================================================hapus mobil
+    public void hapusmobil() {
+        if (mbl.isEmpty()) {
+            System.out.println("Belum ada data mobil untuk dihapus!");
+            return;
+        }
+
+        System.out.println("Data mobil:");
+        int index = 1;
+        for (mobil m : mbl) {
+            System.out.println("ID: " + index);
+            m.tampildatamobil();
+            System.out.println("");
+            index++;
+        }
+
+        System.out.print("Masukkan ID mobil yang ingin dihapus: ");
+        int idhapus = input.nextInt();
+
+        if (idhapus < 1 || idhapus > mbl.size()) {
+           System.out.println("ID tidak valid!");
+            return;
+        }
+
+        mbl.remove(idhapus - 1);
+        System.out.println("Data mobil berhasil dihapus!");
+    }
+    
+}   
+
+
 // almond eyes my beloved 💖🐴🌰👀
