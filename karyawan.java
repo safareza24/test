@@ -8,7 +8,7 @@ public class karyawan {
     public String alamat = "";
     public String telp = "";
     public String kategori = "";
-    public char jenisK;
+    public char jenisK = 'l';
     public Boolean status = true;
 
     Scanner input = new Scanner(System.in);

@@ -16,6 +16,7 @@ public class menu {
         pesan psn = new pesan();
         Boolean n = false;
         int pilh;
+        int hargajarak = 0;
 
         do {
             System.out.println("");
@@ -30,36 +31,37 @@ public class menu {
                 do {
                     System.out.println("");
                     System.out.println("1. Input data karyawan");
-                    System.out.println("2. Input data mobil");
-                    System.out.println("3. Tampilkan data karyawan");
-                    System.out.println("4. Tampilkan data mobil");
-                    System.out.println("5. Update data karyawan");
-                    System.out.println("6. Update data mobil");
-                    System.out.println("7. Delete data karyawan");
+                    System.out.println("2. Tampilkan data karyawan");
+                    System.out.println("3. Update data karyawan");
+                    System.out.println("4. Delete data karyawan");
+                    System.out.println("5. Input data mobil");
+                    System.out.println("6. Tampilkan data mobil");
+                    System.out.println("7. Update data mobil");
                     System.out.println("8. Delete data mobil");
-                    
                     System.out.println("9. Kembali");
                     System.out.print("Masukkan pilihan anda: ");
                     int pil = sc.nextInt();
+                    System.out.println("");
 
                     if (pil == 1) {
                         app.createkaryawan();
                     } else if (pil == 2) {
-                        app.createmobil();
-                    } else if (pil == 3) {
                         app.readkaryawan();
-                    } else if (pil == 4) {
-                        app.readmobil();
-                    } else if (pil == 5) {
+                    } else if (pil == 3) {
                         app.updatekaryawan();
-                    } else if (pil == 6) {
-                        app.updatemobil();
-
-                    } else if(pil == 7){ //hapus karyawan ===========================
+                    } else if (pil == 4) { // hapus karyawan ===========================
                         app.hapuskaryawan();
-                    } else if (pil == 8){//hapus mobil =================
+                    } else if (pil == 5) {
+                        app.createmobil();
+                    } else if (pil == 6) {
+                        app.readmobil();
+                    } else if (pil == 7) {
+                        app.updatemobil();
+                    } else if (pil == 8) {// hapus mobil =================
                         app.hapusmobil();
-                    } else if (pil == 9) { // close farez
+                    }
+
+                    else if (pil == 9) { // close farez
                         n = true;
                     }
                 } while (n == false);
@@ -89,7 +91,26 @@ public class menu {
                         System.out.println("6. Kembali");
                         System.out.print("Pilihan rute anda (nomor saja): ");
                         int rute = sc.nextInt();
-                        if (rute == 6) {
+                        System.out.println("");
+
+                        if (rute == 1) {
+                            System.out.println("Harga rute : Rp. 100.000,00");
+                            hargajarak = 100000;
+                        } else if (rute == 2) {
+                            System.out.println("Harga rute : Rp. 200.000,00");
+                            hargajarak = 200000;
+                        } else if (rute == 3) {
+                            System.out.println("Harga rute : Rp. 150.000,00");
+                            hargajarak = 150000;
+                        } else if (rute == 4) {
+                            System.out.println("Harga rute : Rp. 120.000,00");
+                            hargajarak = 120000;
+                        } else if (rute == 5) {
+                            System.out.println("Harga rute : Rp. 70.000,00");
+                            hargajarak = 70000;
+                        }
+
+                        else if (rute == 6) {
                             continue;
                         }
 
@@ -104,6 +125,7 @@ public class menu {
                             System.out.println("Data mobil atau karyawan belum diinput!");
                         } else {
                             psn.pesanTravel(app.mbl, app.kry);
+                            System.out.println("Total harga anda " + (hargajarak + app.mbl.get(pil - 1).biayasewa));
                         }
 
                     } else if (pil == 2) {
@@ -163,7 +185,7 @@ public class menu {
         System.out.println("Data karyawan:");
         int idk = 1;
         for (karyawan k : kry) {
-            System.out.println("Id : " + idk);
+            System.out.println("Karyawan ke : " + idk);
             k.tampildatakaryawan();
             System.out.println("");
             idk++;
@@ -177,27 +199,27 @@ public class menu {
         }
 
         System.out.println("Data mobil:");
-        // int idm = 1;
+        int idm = 1;
         for (mobil m : mbl) {
-            // System.out.println("Id : " + idm);
+            System.out.println("Mobil ke : " + idm);
             m.tampildatamobil();
             System.out.println("");
-            // idm++;
+            idm++;
         }
     }
 
     public void updatekaryawan() {
 
         System.out.println("Data karyawan:");
-        // int idk = 1;
+        int idk = 1;
         for (karyawan k : kry) {
-            // System.out.println("Id : " + idk);
+            System.out.println("Karyawan ke : " + idk);
             k.tampildatakaryawan();
             System.out.println("");
-            // idk++;
+            idk++;
         }
 
-        System.out.println("Pilih karyawan berapa: ");
+        System.out.println("Pilih karyawan berapa (urutan): ");
         int pil = input.nextInt();
         System.out.println("");
 
@@ -247,14 +269,14 @@ public class menu {
     public void updatemobil() {
 
         System.out.println("Data mobil:");
-        // int idm = 1;
+        int idm = 1;
         for (mobil m : mbl) {
-            // System.out.println("Id : " + idm);
+            System.out.println("Mobil ke : " + idm);
             m.tampildatamobil();
             System.out.println("");
-            // idm++;
+            idm++;
         }
-        System.out.println("Pilih mobil mana: ");
+        System.out.println("Pilih mobil mana (urutan): ");
         int pil = input.nextInt();
         System.out.println("");
 
@@ -298,9 +320,17 @@ public class menu {
             } else {
                 mbl.get(pil - 1).setstatus(false);
             }
+        } else if (p.equalsIgnoreCase("biaya sewa")) {
+            System.out.println("");
+            System.out.println("Masukkan biaya sewa yang baru: ");
+            double biayabaru = input.nextDouble();
+            input.nextLine();
+            mbl.get(pil - 1).setbiaya(biayabaru);
         }
     }
-    //=====================================================================hapus karyawan kodenya
+
+    // =====================================================================hapus
+    // karyawan kodenya
     public void hapuskaryawan() {
         if (kry.isEmpty()) {
             System.out.println("Belum ada data karyawan untuk dihapus!");
@@ -316,19 +346,20 @@ public class menu {
             index++;
         }
 
-        System.out.print("Masukkan ID karyawan yang ingin dihapus: ");
+        System.out.print("Masukkan urutan karyawan yang ingin dihapus: ");
         int idhapus = input.nextInt();
 
         if (idhapus < 1 || idhapus > kry.size()) {
-           System.out.println("ID tidak valid!");
+            System.out.println("ID tidak valid!");
             return;
         }
 
         kry.remove(idhapus - 1);
         System.out.println("Data karyawan berhasil dihapus!");
     }
-    
-    //=================================================================================hapus mobil
+
+    // =================================================================================hapus
+    // mobil
     public void hapusmobil() {
         if (mbl.isEmpty()) {
             System.out.println("Belum ada data mobil untuk dihapus!");
@@ -344,19 +375,18 @@ public class menu {
             index++;
         }
 
-        System.out.print("Masukkan ID mobil yang ingin dihapus: ");
+        System.out.print("Masukkan urutan mobil yang ingin dihapus: ");
         int idhapus = input.nextInt();
 
         if (idhapus < 1 || idhapus > mbl.size()) {
-           System.out.println("ID tidak valid!");
+            System.out.println("ID tidak valid!");
             return;
         }
 
         mbl.remove(idhapus - 1);
         System.out.println("Data mobil berhasil dihapus!");
     }
-    
-}   
 
+}
 
 // almond eyes my beloved 💖🐴🌰👀

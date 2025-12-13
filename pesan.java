@@ -8,7 +8,7 @@ public class pesan {
 
         int pilMobil;
         while (true) {
-            System.out.println("Pilih mobil :");
+            System.out.println("Pilih mobil (urutan):");
             for (int i = 0; i < mbl.size(); i++) {
                 System.out.println((i + 1) + ". ");
                 mbl.get(i).tampildatamobil();
@@ -27,7 +27,7 @@ public class pesan {
 
         int pilKaryawan;
         while (true) {
-            System.out.println("Pilih Driver :");
+            System.out.println("Pilih Driver (urutan):");
             for (int i = 0; i < kry.size(); i++) {
                 System.out.println((i + 1) + ". ");
                 kry.get(i).tampildatakaryawan();
@@ -38,7 +38,11 @@ public class pesan {
             input.nextLine();
 
             if (kry.get(pilKaryawan - 1).status == true) {
-                break;
+                if (kry.get(pilKaryawan - 1).kategori.equalsIgnoreCase("supir")) {
+                    break;
+                } else {
+                    System.out.println("Tolong pilih supir, bukan karyawan lain.");
+                }
             } else {
                 System.out.println("Driver sedang tidak tersedia, pilih driver lain.");
             }
@@ -48,13 +52,16 @@ public class pesan {
         kry.get(pilKaryawan - 1).status = false;
 
         System.out.println("Travel berhasil dipesan.");
+        System.out.println("Driver : " + kry.get(pilKaryawan - 1).Nama);
+        System.out.println("Mobil : " + mbl.get(pilMobil - 1).merek);
+        // System.out.println("Harga : " + mbl.get(pilMobil - 1).biayasewa);
     }
 
     public void sewaMobil(ArrayList<mobil> mbl) {
 
         int pilMobil;
         while (true) {
-            System.out.println("Pilih mobil:");
+            System.out.println("Pilih mobil (urutan):");
             for (int i = 0; i < mbl.size(); i++) {
                 System.out.println((i + 1) + ". ");
                 mbl.get(i).tampildatamobil();

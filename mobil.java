@@ -8,7 +8,7 @@ public class mobil {
     public String plat = "";
     public String kategori = "";
     public Boolean status = true;
-    public double biayasewa;
+    public double biayasewa = 0;
     Scanner input = new Scanner(System.in);
 
     public mobil() {
@@ -78,5 +78,9 @@ public class mobil {
 
     public void setkategori(String x) {
         kategori = x;
+    }
+
+    public void setbiaya(Double x) {
+        biayasewa = x;
     }
 }
