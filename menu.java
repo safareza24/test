@@ -21,7 +21,7 @@ public class menu {
             System.out.println("6.Update data mobil");
             System.out.println("7.delete data karyawan");
             System.out.println("8.delete data mobil");
-            System.out.println("9.delete data mobil");
+            System.out.println("9.keluar");
             System.out.println("");
             System.out.print("Masukkan pilihan anda: ");
             int pil = sc.nextInt();
@@ -40,6 +40,12 @@ public class menu {
             }
             else if(pil == 5){
                 app.updatekaryawan();
+            }
+            else if(pil == 7){//ini benerin
+                app.hapuskaryawan();
+            }
+            else if(pil == 8){//ini benerin
+                app.hapusmobil();
             }
             else if(pil == 9){
                 n = true;
@@ -155,4 +161,69 @@ public class menu {
             
         }
     }
+    //----------------------------------------------------------
+    public void hapuskaryawan() {
+        if (banyakkaryawan == 0) {
+            System.out.println("Belum ada data karyawan!");
+            return;
+        }
+
+        System.out.println("=== Daftar Karyawan ===");
+        for (int i = 0; i < banyakkaryawan; i++) {
+            System.out.println((i + 1) + ". " + kry[i].Nama);
+        }
+
+        System.out.print("Pilih nomor karyawan yang ingin dihapus: ");
+        int hapus = input.nextInt();
+        input.nextLine(); // buffer enter
+
+        if (hapus < 1 || hapus > banyakkaryawan) {
+            System.out.println("Pilihan tidak valid!");
+            return;
+        }
+
+        // Geser array ke kiri setelah penghapusan
+        for (int i = hapus - 1; i < banyakkaryawan - 1; i++) {
+           kry[i] = kry[i + 1];
+        }
+
+        kry[banyakkaryawan - 1] = null; // hapus data terakhir
+        banyakkaryawan--;               // kurangi jumlah karyawan
+
+        System.out.println("Karyawan berhasil dihapus!");
+    }
+
+    //=====================================================================
+    public void hapusmobil() {
+        if (banyakkaryawan == 0) {
+            System.out.println("Belum ada data mobil!");
+            return;
+        }
+
+        System.out.println("=== Daftar mobil ===");
+        for (int i = 0; i < banyakmobil; i++) {
+            System.out.println((i + 1) + ". " + kry[i].Nama);
+        }
+
+        System.out.print("Pilih nomor karyawan yang ingin dihapus: ");
+        int hapus = input.nextInt();
+        input.nextLine(); // buffer enter
+
+        if (hapus < 1 || hapus > banyakmobil) {
+            System.out.println("Pilihan tidak valid!");
+            return;
+        }
+
+        // Geser array ke kiri setelah penghapusan
+        for (int i = hapus - 1; i < banyakmobil - 1; i++) {
+           kry[i] = kry[i + 1];
+        }
+
+        kry[banyakmobil - 1] = null; // hapus data terakhir
+        banyakmobil--;               // kurangi jumlah karyawan
+
+        System.out.println("Mobil tersebut berhasil dihapus!");
+    }
 }
+
+
